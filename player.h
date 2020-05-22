@@ -23,6 +23,10 @@ class player{
         void Auto_1_Block();//玩家1方块自行下落
 
         void Auto_1_Block();//玩家2方块自行下落
+
+        int Player1_map;    //玩家1的游戏状况
+
+        int Player2_map;    //玩家2的游戏状况
     private:
         int Player1_Score;
 

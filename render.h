@@ -6,5 +6,7 @@ class rander{
 
     void GameScreen();//游戏界面
 
+    void BlockScreen();//方块堆叠界面
+
     void EndGame();//结束界面
 };
