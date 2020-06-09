@@ -165,66 +165,75 @@ void block::Create_Block(){         //创建新方块
     case 0:{
         for(int i=0;i<4;i++){
             for(int j=0;j<4;j++){
-                BlockNext[i][j]=Block_1[0][i][j];
+                Block[i][j]=Block_1[0][i][j];
             }
         }
     }
      case 1:{
         for(int i=0;i<4;i++){
             for(int j=0;j<4;j++){
-                BlockNext[i][j]=Block_2[0][i][j];
+                Block[i][j]=Block_2[0][i][j];
             }
         }
     }
      case 2:{
         for(int i=0;i<4;i++){
             for(int j=0;j<4;j++){
-                BlockNext[i][j]=Block_3[0][i][j];
+                Block[i][j]=Block_3[0][i][j];
             }
         }
     }
      case 3:{
         for(int i=0;i<4;i++){
             for(int j=0;j<4;j++){
-                BlockNext[i][j]=Block_4[0][i][j];
+                Block[i][j]=Block_4[0][i][j];
             }
         }
     }
      case 4:{
         for(int i=0;i<4;i++){
             for(int j=0;j<4;j++){
-                BlockNext[i][j]=Block_5[0][i][j];
+                Block[i][j]=Block_5[0][i][j];
             }
         }
     }
      case 5:{
         for(int i=0;i<4;i++){
             for(int j=0;j<4;j++){
-                BlockNext[i][j]=Block_6[0][i][j];
+                Block[i][j]=Block_6[0][i][j];
             }
         }
     }
      case 6:{
         for(int i=0;i<4;i++){
             for(int j=0;j<4;j++){
-                BlockNext[i][j]=Block_7[0][i][j];
+                Block[i][j]=Block_7[0][i][j];
             }
         }
     }
 
     }
 }
-void block::Change_Block(){
+void  Change_Block(block b1,block b2){      //将next的block置入now的block并更新next
     for(int i=0;i<4;i++){
             for(int j=0;j<4;j++){
-                BlockNow[i][j]=BlockNext[i][j];
+                b1.Block[i][j]=b2.Block[i][j];
+            }
+        }
+    b2.Create_Block();
+}
+
+/*void block::Change_Block(){
+    for(int i=0;i<4;i++){
+            for(int j=0;j<4;j++){
+                Block[i][j]=BlockNext[i][j];
             }
         }
         Create_Block();
     }
-
-void block::Start_Block(){
+*/
+/*void block::Start_Block(){
     Create_Block();
     Change_Block();
-}
+}*/
     

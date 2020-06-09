@@ -1,3 +1,4 @@
+#include "block.h"
 class player{
     public:
         void Up();//玩家1变换方块形状
@@ -24,13 +25,27 @@ class player{
 
         void Auto_1_Block();//玩家2方块自行下落
 
-        int Player1_map;    //玩家1的游戏状况
 
-        int Player2_map;    //玩家2的游戏状况
+        //这里还能进一步修改
+
+        int Player1_map[20][10];    //玩家1的游戏状况
+
+        int Player2_map[20][10];    //玩家2的游戏状况
+
+        player();
+
     private:
         int Player1_Score;
 
         int Player2_Score;
 
+        block Player1_Block_NOW;
 
+        block Player2_Block_NOW;
+
+        block Player1_Block_next;
+
+        block Player2_Block_next;
+        
+        bool win;//判断胜负
 };

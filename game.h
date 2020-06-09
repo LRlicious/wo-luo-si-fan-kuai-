@@ -8,4 +8,9 @@ class game{
 
     bool Faile();//判断失败条件
 
+    //上部分的功能应该挪到play区
+
+    static void start_game();
+
+    static void game_over(player player1);
 };

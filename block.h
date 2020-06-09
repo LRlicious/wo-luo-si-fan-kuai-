@@ -2,15 +2,13 @@ class block{
     public:
         void Create_Block();//随机生成方块
 
-        void Change_Block();//将下一个方块置入游戏
+        friend void Change_Block(block b1,block b2);//将下一个方块置入游戏
 
-        void Start_Block();//游戏开始时的方块建立
+        //void Start_Block();//游戏开始时的方块建立
 
         block();
 
-        int BlockNow[4][4];
-
-        int BlockNext[4][4];
+        int Block[4][4];
 
     private:
         int Block_1[4][4][4];//"O形"
