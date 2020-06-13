@@ -25,27 +25,30 @@ player::player(){
 
 void player::Up(){
         block temp=Player1_Block_NOW.Spin_Block();
-        if(Ifmove(Player1_Block_NOW,X,Y)){
-            return;
+        if(Ifmove(temp,X,Y)){
+            Player1_Block_NOW=temp;
         }
         else
         {
-            Player1_Block_NOW=temp;
+            return;
         }
         
 }
 void player::Right(){
-    if(Ifmove(Player1_Block_NOW,X,Y)){
+    int y=Y+1;
+    if(Ifmove(Player1_Block_NOW,X,y)){
         Y++;
     }
 }
 void player::Left(){
-    if(Ifmove(Player1_Block_NOW,X,Y)){
+    int y=Y+1;
+    if(Ifmove(Player1_Block_NOW,X,y)){
         Y--;
     }
 }
 bool player::Down(){    //这里用bool值来判断是否到底部停止，true则接着调用检测消行的 bool Getscore();
-    if(Ifmove(Player1_Block_NOW,X,Y)){
+    int x=X+1;
+    if(Ifmove(Player1_Block_NOW,x,Y)){
         X++;
         return false;
     }
