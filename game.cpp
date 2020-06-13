@@ -16,18 +16,22 @@ void game::start_game(){
     int speed;
     int tick=100;
     last=GetTickCount();
+            //此处应有游戏界面初始化渲染用的函数
     while (1){
         now=GetTickCount();
         if(now>last){//自动下落区域
             last+=tick;
             if(player1.Down()){
+                        //此处应有游戏界面更新用的函数
                     if(player1.Faile()){
                         player2.win=true;
                     }
                     int t=player1.Getscore();
                     if(t)
                     {
+                            //此处应有游戏界面更新用的函数
                         player2.Addline(t);
+                            //此处应有游戏界面更新用的函数
                         if(player2.Faile()){
                         player1.win=true;
                     }
@@ -35,13 +39,16 @@ void game::start_game(){
                     
                 }
              if(player2.Down()){
+                        //此处应有游戏界面更新用的函数
                     if(player2.Faile()){
                         player1.win=true;
                     }
                     int t=player2.Getscore();
                     if(t)
                     {
+                            //此处应有游戏界面更新用的函数
                         player1.Addline(t);
+                            //此处应有游戏界面更新用的函数
                         if(player1.Faile()){
                         player2.win=true;
                     }
@@ -54,25 +61,32 @@ void game::start_game(){
             key=_getch();
             if(key=='w'){
                 player1.Up();
+                    //此处应有游戏界面更新用的函数
             }
             else if(key=='8'){
                 player2.Up();
+                    //此处应有游戏界面更新用的函数
             }    
             else if(key=='a'){
                 player1.Left();
+                    //此处应有游戏界面更新用的函数
             }
             else if(key=='4'){
                 player2.Left();
+                    //此处应有游戏界面更新用的函数
             }
             else if(key=='s'){
                 if(player1.Down()){
+                        //此处应有游戏界面更新用的函数
                      if(player1.Faile()){
                         player2.win=true;
                     }
                     int t=player1.Getscore();
                     if(t)
                     {
+                            //此处应有游戏界面更新用的函数
                         player2.Addline(t);
+                            //此处应有游戏界面更新用的函数
                         if(player2.Faile()){
                         player1.win=true;
                     }
@@ -85,13 +99,16 @@ void game::start_game(){
             }
             else if(key=='5'){
                 if(player2.Down()){
+                        //此处应有游戏界面更新用的函数
                      if(player2.Faile()){
                         player1.win=true;
                     }
                     int t=player2.Getscore();
                     if(t)
                     {
+                            //此处应有游戏界面更新用的函数
                         player1.Addline(t);
+                            //此处应有游戏界面更新用的函数
                         if(player1.Faile()){
                         player2.win=true;
                     }
@@ -103,18 +120,20 @@ void game::start_game(){
             }
             else if(key=='d'){
                 player1.Right();
+                    //此处应有游戏界面更新用的函数
             }
             else if(key=='6'){
                 player2.Right();
+                    //此处应有游戏界面更新用的函数
             }
             }
         Sleep(20);// 降低CPU占用
-        if(player1.win==true){      //执行结束 还差一个endgame渲染函数
-
+        if(player1.win==true){      //执行结束 
+                //此处应有显示玩家1获胜用的函数
             return;
         }
         if(player2.win==true){      //执行结束 
-
+                //此处应有显示玩家2获胜用的函数
             return;
         }
     }
